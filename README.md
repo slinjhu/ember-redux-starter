@@ -1,6 +1,20 @@
 # ember-redux-starter
 
-In this project we build an Ember-Redux app: simple counter. [Redux](http://redux.js.org/) is a predictable state container for JS apps. 
+In this project we build an Ember-Redux app: simple todos. 
+
+## Redux
+[Redux](http://redux.js.org/) is a predictable state container for JS apps. 
+
+There are a few core concepts in redux:
+
+* State: the app's state is described as a plain object.
+* Action: a plain object describing what happened to the state. Actions must have `type` field
+* Reducer: a function that takes state and an action as arguments, and returns the next state.
+
+Keep in mind the following rules
+
+* The state of the whole app is stored in a single object.
+* Do not modify the state in writing reducers. Make changes with pure functions.
 
 ## Prerequisites
 

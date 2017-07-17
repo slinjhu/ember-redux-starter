@@ -1,0 +1,21 @@
+<strong>Filter:</strong>
+<select onchange={{action "setFilter" value="target.value"}}>
+  {{#each filterValues as |f|}}
+    <option selected={{eq state.filter f}}>{{f}}</option>
+  {{/each}}
+</select>
+
+<ul>
+  {{#each visibleTodos as |todo|}}
+    <li>
+      <input type="checkbox" checked={{todo.done}} {{action "toggleTodo" todo.index}}>
+      <span class="todo-text{{if todo.done "__done"}}">
+        {{todo.text}}
+      </span>
+    </li>
+  {{/each}}
+</ul>
+
+{{! Two way data binding with component field `newText`}}
+{{input value=newText}}
+<button {{action "addTodo"}}>Add</button>
